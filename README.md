@@ -22,7 +22,7 @@ Maak nu een aantal li's in een list. Je kan ervoor kiezen elke lijst 1 item te g
         <li> List item 1</li>
         <li> List item 2</li>
         <li> List item 3</li>
-        <li> List item 4 </li>
+        <li> List item 4</li>
     </ul>
     <ul></ul>
     <ul></ul>
