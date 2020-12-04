@@ -29,6 +29,9 @@ Maak nu een aantal li's in een list. Je kan ervoor kiezen elke lijst 1 item te g
 </section>
 ```
 
+#### Stap 3
+Maak de list items sleepbaar door de draggable attribute op te zetten en deze op true te zetten. HIER VERDER EN VERTELLEN OVER DRAGGABLE
+
 # Bronnen 
 - https://www.youtube.com/watch?v=tZ45HZAkbLc
 - https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
