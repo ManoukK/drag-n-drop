@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: scroll;
+    background-color: palevioletred;
+}
+
+h1 {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* display flex met nowrap  en scroll zodat het kan scrollen naar de zijkant*/
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow-x: scroll;
+}
+
+ul {
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+    padding: 1rem;
+    min-width: 20rem;
+    border-radius: 5px;
+}
+
+li {
+    list-style: none;
+    background-color: white;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+}
