@@ -138,6 +138,27 @@ lists.forEach(list => {
 }
 ```
 
+#### Stap 3.1
+De eerste event listener luistert zodra er een item over een lijst wordt gesleept waar je het item mogelijk in kan zetten. De dragover event listener telt als het ware elk "frame" om de zoveel milliseconde. Met de preventDefault kan je er nu voor zorgen dat het verplaatsen van items gaat werken. 
+
+```js
+list.addEventListener('dragover', function(e){
+    e.preventDefault();
+});
+```
+
+#### Stap 3.2
+De dragenter word geactiveerd zodra er een item een ul binnenkomt of entert. Ook hier moet je de preventDefault in plaatsen als je items wilt verslepen. Om wat feedback te geven naar de gebruiker toe heb ik er ook wat styling op gezet. De achtergrond kleur van de desbetreffende ul word nu iets donkerder zodra er een li entert komt. 
+
+```js
+list.addEventListener('dragenter', function(e){
+    e.preventDefault();
+
+    this.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+});
+```
+
+
 # Bronnen 
 - https://www.youtube.com/watch?v=tZ45HZAkbLc
 - https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
