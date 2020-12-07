@@ -106,23 +106,43 @@ De eerste event listener luistert wanneer je een item begint met slepen. Als je 
 
 Zodra deze functie word getriggert willen we de draggedItem vervangen voor het item wat gesleept word. 
 
+Wat er nu gebeurd is dat als je het item gaat slepen, het item nog te zien is in de lijst. We willen eigenlijk dat die item "eruit" gaat als het ware. Hiervoor zetten we een display none op de item die gesleept word. Dankzij de setTimeout word het item in de lijst onzichtbaar maar zie je nog wel het item die je sleept. Als je er geen setTimeout op zet word ook dat item verwijderd. 
+
 ```js
 item.addEventListener('dragstart', function () {
-    draggedItem = item;
-    
     setTimeout(function () {
+        draggedItem = item;
         draggedItem.style.display = 'none';
     }, 0)
 });
 ```
 
+#### Stap 2.2
+Wanneer het slepen stopt word deze event listener getriggert. Nu zetten we in de setTimeout dat het item weer display block moet worden en de draggedItem veranderd weer naar null want je sleept geen items meer. De draggedItem zetten we ook in de setTimeout. Dit is om type errors te voorkomen. 
 
+```js
+item.addEventListener('dragend', function () {
+    setTimeout(function () {
+        draggedItem.style.display = 'block';
+        draggedItem = null;
+    }, 0);
+})
+```
+
+#### Stap 3
+Nu maken we een tweede foreach maar dan voor de ul's. Hier komen ook iets meer event listeners in dan in de foreach die we net hebben gemaakt. 
+
+```js
+lists.forEach(list => {
+
+}
+```
 
 # Bronnen 
 - https://www.youtube.com/watch?v=tZ45HZAkbLc
 - https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
 
 # Voor de toekomst 
-- [ ] Lijsten meeschalen met de hoeveelheid content erin
 - [ ] Lijsten mooi meeschalen met de hoeveelheid lijsten (+ met veel lijsten overflow x)
 - [ ] Mooiere styling 
+- [ ] In javascript classes geven en deze in css stylen
