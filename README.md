@@ -158,6 +158,25 @@ list.addEventListener('dragenter', function(e){
 });
 ```
 
+#### Stap 3.3
+Hierboven heb je nu een achtergrond kleur ingesteld zodra er een item entert. Als je weer met het item weggaat zie je dat de kleur zo blijft staan. Het liefst wil je natuurlijk dat dit weer naar de default achtergrond kleur gaat. Daar is deze event listener voor. 
+
+```js
+list.addEventListener('dragleave', function(){
+    this.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+});
+```
+
+#### Stap 3.4
+Nu kan je nog steeds niet drag en droppen. Daar is deze event listener voor! Dit word getriggert zodra je het item los laat of dropt. Met de eerste regel zorg je ervoor dat het item wat je sleept toegevoegd word aan de lijst waar je overgeen hovert. Met append kan je namelijk met javascript html elementen of teksten manipuleren. Verder je ook hier dat de achtergrond kleur weer op default gaat. 
+
+```js
+list.addEventListener('drop', function(){
+    this.append(draggedItem);
+    this.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+});
+```
+
 
 # Bronnen 
 - https://www.youtube.com/watch?v=tZ45HZAkbLc
