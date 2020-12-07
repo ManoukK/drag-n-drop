@@ -4,20 +4,18 @@ const lists = document.querySelectorAll('ul');
 // welke item er gesleept word
 let draggedItem = null;
 
-
 list_items.forEach(item => {
 
     // event listener voor wanneer het slepen begint
-    item.addEventListener('dragstart', function (e) {
-
-        //draggeditem word nu het item wat je gaat slepen
-        draggedItem = item;
+    item.addEventListener('dragstart', function () {
 
         // door de set timeout zie je nog wel het item wat je sleept maar
         // niet meer in het lijstje als je dit niet via settimeout doet word het item onzichtbaar ook als je sleept. 
 		setTimeout(function () {
-			draggedItem.style.display = 'none';
-		}, 0)
+            //draggeditem word nu het item wat je gaat slepen
+            draggedItem = item;
+            draggedItem.style.display = 'none';
+        }, 0)
 	});
 
     // wanneer het slepen eindigd
@@ -25,8 +23,8 @@ list_items.forEach(item => {
 		setTimeout(function () {
             draggedItem.style.display = 'block';
             // dragged item weer op null omdat je niet meer sleept
-			draggedItem = null;
-		}, 0);
+            draggedItem = null;      
+        }, 0)
 	})
 
 });
@@ -54,7 +52,7 @@ lists.forEach(list => {
     });
 
 
-    list.addEventListener('drop', function(e){
+    list.addEventListener('drop', function(){
         this.append(draggedItem);
         // zet de kleuren weer normaal als je het item erin zet
         this.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
